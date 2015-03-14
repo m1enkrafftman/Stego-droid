@@ -6,11 +6,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Base64;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +22,11 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.parse.ParseFile;
+import com.parse.ParseObject;
+import com.parse.ParseUser;
+
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 
 import devry.networkswitch.com.stegonosaurus.imageutils.Model;
@@ -134,11 +142,36 @@ public class EncodeActivity extends ActionBarActivity {
                 else
                 {
                     Model.modifyImage(imagePath, AppConstant.textstuff.getPath());
+                   // Bitmap parseimg = decodeFile(AppConstant.currentlyModified, imageWidth, imageWidth);
+                    //String path = (AppConstant.currentlyModified.toString());
+                    //String encoded = encodeTobase64(parseimg);
+//                    ParseFile file = new ParseFile("Modifiedimage" , path.getBytes());
+//                    file.saveInBackground();
+//                    ParseObject image = new ParseObject("Images");
+//                    image.put("Image", file);
+//                    image.put("UserId", ParseUser.getCurrentUser().get("ObjectId"));
+//                    image.saveInBackground();
                 }
             }
         });
 
 
+    }
+
+    public static String encodeTobase64(Bitmap image)
+    {
+        Bitmap immagex = image;
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        immagex.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        byte[] b = baos.toByteArray();
+        String imageEncoded = Base64.encodeToString(b, Base64.DEFAULT);
+        return imageEncoded;
+    }
+
+    public static Bitmap decodeBase64(String input)
+    {
+        byte[] decodedByte = Base64.decode(input, 0);
+        return BitmapFactory.decodeByteArray(decodedByte, 0, decodedByte.length);
     }
 
 
@@ -175,7 +208,7 @@ public class EncodeActivity extends ActionBarActivity {
               // The Intent's data Uri identifies which contact was selected.
               Uri selectedimage = data.getData();
               Toast.makeText(this,getRealPathFromURI(this, selectedimage ), Toast.LENGTH_SHORT).show();
-             // Model.modifyImage(imagePath, getRealPathFromURI(this, selectedimage ));
+              Model.modifyImage(imagePath, getRealPathFromURI(this, selectedimage ));
 
               // Do something with the contact here (bigger example below)
           }

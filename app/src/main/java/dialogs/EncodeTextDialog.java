@@ -70,15 +70,8 @@ public class EncodeTextDialog extends DialogFragment {
         dialog.setCanceledOnTouchOutside(true);
         dialog.show();
 
-        //_imagePath = getArguments().getString("imagePath");
-        //_imageWidth = getArguments().getInt("imageWidth");
         messageText = (EditText) dialog.findViewById(R.id.editText_bigmessage);
 
-
-
-        // Disable cancel button, until the security PIN is filled
-//        cancelButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
-//        cancelButton.setEnabled(false);
 
         return dialog;
     }

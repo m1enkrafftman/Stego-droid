@@ -20,6 +20,8 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Random;
 
+import helper.AppConstant;
+
 import static android.graphics.BitmapFactory.decodeFile;
 
 
@@ -40,14 +42,6 @@ public class Model
         img.setConfig(Bitmap.Config.ARGB_8888);
         ArrayList<Integer> data = loadFile(fileLoc);
 
-//        for(int i = 0; i < img.getHeight(); i++)
-//        {
-//            for(int j =0 ; j < img.getWidth(); j++)
-//            {
-//                    Log.e("Pixel Stuff" ,"" +img.getPixel(i, j));
-//
-//            }
-//        }
 
         int base = encodeBase(data.size(), img.getHeight() * img.getWidth() * 3);
         data = transformDataToBaseN(data, base);
@@ -183,7 +177,7 @@ public class Model
         BufferedInputStream is = null;
         try
         {
-            is = new BufferedInputStream(new FileInputStream(fileLocation));
+            is = new BufferedInputStream(new FileInputStream(fileLocation), 10000000);
         }
         catch (FileNotFoundException e)
         {
@@ -402,6 +396,7 @@ public class Model
         //+ getRandomPNGName()
         byte[] bytes = getByteArrayFromBitmap(img);
         File file = new File(String.valueOf(Environment.getExternalStorageDirectory()) + "/Download/"+ getRandomPNGName());
+        AppConstant.currentlyModified = String.valueOf(Environment.getExternalStorageDirectory() + "/Download/"+ getRandomPNGName());
 
         try {
             file.createNewFile();

@@ -23,4 +23,6 @@ public class AppConstant {
             "png");
 
     public static File textstuff = null;
+
+    public static String currentlyModified = null;
 }
