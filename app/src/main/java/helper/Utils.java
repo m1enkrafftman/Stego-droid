@@ -57,7 +57,7 @@ public class Utils {
             if (listFiles.length > 0) {
 
                 // loop through all files
-                for (int i = 0; i < listFiles.length; i++) {
+                for (int i = listFiles.length - 1; i >= 0; i--) {
 
                     // get file path
                     String filePath = listFiles[i].getAbsolutePath();
