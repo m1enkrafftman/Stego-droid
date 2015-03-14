@@ -11,10 +11,4 @@
         app:showAsAction="always"
         />
 
-    <item
-        android:id="@+id/action_add_dialog"
-        android:title="[ + ]"
-        android:orderInCategory="95"
-        app:showAsAction="always"
-        />
 </menu>

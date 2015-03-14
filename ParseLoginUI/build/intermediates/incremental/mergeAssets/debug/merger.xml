@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="C:\Users\Sebastian Florez\Repos\Android\Stegonosaurus\stegonosaurus-android\ParseLoginUI\src\main\assets"/></dataSet><dataSet config="debug"><source path="C:\Users\Sebastian Florez\Repos\Android\Stegonosaurus\stegonosaurus-android\ParseLoginUI\src\debug\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/home/m1/Documents/SwampHacks2015/Stego/stegonosaurus-android/ParseLoginUI/src/main/assets"/></dataSet><dataSet config="debug"><source path="/home/m1/Documents/SwampHacks2015/Stego/stegonosaurus-android/ParseLoginUI/src/debug/assets"/></dataSet></merger>

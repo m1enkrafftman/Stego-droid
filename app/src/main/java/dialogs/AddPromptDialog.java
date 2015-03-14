@@ -83,12 +83,6 @@ public class AddPromptDialog extends DialogFragment {
             }
         });
 
-        generateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openGenerate();
-            }
-        });
 
         // Disable cancel button, until the security PIN is filled
 //        cancelButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);

@@ -76,11 +76,11 @@ public class MainActivity extends ActionBarActivity {
             logout();
             return true;
         }
-        else if (id == R.id.action_add_dialog)
-        {
-            showAddDialogPrompt();
-            return true;
-        }
+//        else if (id == R.id.action_add_dialog)
+//        {
+//            showAddDialogPrompt();
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }

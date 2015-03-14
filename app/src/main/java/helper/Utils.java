@@ -36,16 +36,16 @@ public class Utils {
 //        File directory = new File(
 //                String.valueOf(MediaStore.Images.Media.INTERNAL_CONTENT_URI));
 
-        Log.e(TAG, String.valueOf( android.os.Environment.getExternalStorageDirectory()
-                + File.separator + "DCIM" + File.separator + "Camera"));
+//        Log.e(TAG, String.valueOf( android.os.Environment.getExternalStorageDirectory()
+//                + File.separator + "DCIM" + File.separator + "Camera"));
                 File directory = new File(
                         String.valueOf(Environment.getExternalStorageDirectory()) + "/Download");
-        for (int i = 0; i < directory.listFiles().length; i++) {
-
-            // get file path
-            String filePath = directory.listFiles()[i].getAbsolutePath();
-            Log.e(TAG, filePath);
-        }
+//        for (int i = 0; i < directory.listFiles().length; i++) {
+//
+//            // get file path
+//            String filePath = directory.listFiles()[i].getAbsolutePath();
+//            Log.e(TAG, filePath);
+//        }
 
         // check for directory
         if (directory.isDirectory()) {
