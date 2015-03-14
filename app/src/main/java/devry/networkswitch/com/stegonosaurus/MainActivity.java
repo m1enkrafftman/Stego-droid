@@ -73,8 +73,12 @@ public class MainActivity extends ActionBarActivity {
         }
         else if (id == R.id.action_logout)
         {
-
             logout();
+            return true;
+        }
+        else if (id == R.id.action_add_dialog)
+        {
+            showAddDialogPrompt();
             return true;
         }
 
@@ -87,6 +91,11 @@ public class MainActivity extends ActionBarActivity {
         ParseUser.logOut();
         Intent intent = new Intent(this, DispatchActivity.class);
         this.startActivity(intent);
+    }
+
+    private void showAddDialogPrompt()
+    {
+
     }
 
     private void InitilizeGridLayout() {

@@ -26,4 +26,4 @@
         android:layout_marginTop="@dimen/com_parse_ui_xlarge_vertical_spacing"
         android:text="@string/com_parse_ui_login_help_submit_button_label" />
 </LinearLayout>
-<!-- From: file:/home/m1/Documents/SwampHacks2015/Stego/stegonosaurus-android/ParseLoginUI/res/layout/com_parse_ui_parse_login_help_form.xml -->
+<!-- From: file:/C:/Users/Sebastian%20Florez/Repos/Android/Stegonosaurus/ParseLoginUI/res/layout/com_parse_ui_parse_login_help_form.xml -->

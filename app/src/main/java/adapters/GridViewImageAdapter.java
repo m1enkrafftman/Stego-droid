@@ -1,9 +1,11 @@
 package adapters;
 
 import android.app.Activity;
+import android.app.DialogFragment;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -16,6 +18,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
+import dialogs.AddPromptDialog;
+
 /**
  * Created by Sebastian Florez on 3/14/2015.
  */
@@ -23,6 +27,8 @@ public class GridViewImageAdapter extends BaseAdapter {
     private Activity _activity;
     private ArrayList<String> _filePaths = new ArrayList<String>();
     private int imageWidth;
+
+    private String _imagePath;
 
     public GridViewImageAdapter(Activity activity, ArrayList<String> filePaths,
                                 int imageWidth) {
@@ -59,6 +65,8 @@ public class GridViewImageAdapter extends BaseAdapter {
         Bitmap image = decodeFile(_filePaths.get(position), imageWidth,
                 imageWidth);
 
+        _imagePath = _filePaths.get(position);
+
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         imageView.setLayoutParams(new GridView.LayoutParams(imageWidth,
                 imageWidth));
@@ -81,11 +89,14 @@ public class GridViewImageAdapter extends BaseAdapter {
 
         @Override
         public void onClick(View v) {
-            Toast.makeText(_activity, "you clicked and image", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(_activity, "you clicked and image", Toast.LENGTH_SHORT).show();
 
-//            Intent i = new Intent(_activity, FullScreenViewActivity.class);
-//            i.putExtra("position", _postion);
-//            _activity.startActivity(i);
+            DialogFragment newFragment = new AddPromptDialog();
+            Bundle args = new Bundle();
+            args.putString("imagePath", _imagePath);
+            args.putInt("imageWidth", imageWidth);
+            newFragment.setArguments(args);
+            newFragment.show(_activity.getFragmentManager(), "Create Stego");
         }
 
     }
