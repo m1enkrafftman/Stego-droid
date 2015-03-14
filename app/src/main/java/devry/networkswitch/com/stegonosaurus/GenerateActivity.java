@@ -1,17 +1,41 @@
 package devry.networkswitch.com.stegonosaurus;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.ImageView;
+
+import static adapters.GridViewImageAdapter.decodeFile;
 
 
 public class GenerateActivity extends ActionBarActivity {
+
+    private Button generateButton;
+    private ImageView imageThumbnail;
+
+    private Bitmap image;
+    private String imagePath;
+    private int imageWidth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_generate);
+
+        generateButton = (Button) findViewById(R.id.button_generate);
+        imageThumbnail = (ImageView) findViewById(R.id.imageView_thumbnail);
+
+        imagePath = getIntent().getStringExtra("imagePath");
+        imageWidth = getIntent().getIntExtra("imageWidth" , 50);
+
+        image = decodeFile(imagePath, imageWidth, imageWidth
+        );
+
+        this.imageThumbnail.setImageBitmap(image);
     }
 
 
@@ -33,7 +57,17 @@ public class GenerateActivity extends ActionBarActivity {
         if (id == R.id.action_settings) {
             return true;
         }
+        else if(id == R.id.action_cancel)
+        {
+            returnToMenu();
+        }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void returnToMenu()
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        this.startActivity(intent);
     }
 }

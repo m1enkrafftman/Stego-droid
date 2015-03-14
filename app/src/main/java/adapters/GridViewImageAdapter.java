@@ -65,8 +65,6 @@ public class GridViewImageAdapter extends BaseAdapter {
         Bitmap image = decodeFile(_filePaths.get(position), imageWidth,
                 imageWidth);
 
-        _imagePath = _filePaths.get(position);
-
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         imageView.setLayoutParams(new GridView.LayoutParams(imageWidth,
                 imageWidth));
@@ -80,17 +78,16 @@ public class GridViewImageAdapter extends BaseAdapter {
 
     class OnImageClickListener implements View.OnClickListener {
 
-        int _postion;
+        int _position;
 
 
         public OnImageClickListener(int position) {
-            this._postion = position;
+            this._position = position;
         }
-
         @Override
         public void onClick(View v) {
             //Toast.makeText(_activity, "you clicked and image", Toast.LENGTH_SHORT).show();
-
+            _imagePath = _filePaths.get(_position);
             DialogFragment newFragment = new AddPromptDialog();
             Bundle args = new Bundle();
             args.putString("imagePath", _imagePath);

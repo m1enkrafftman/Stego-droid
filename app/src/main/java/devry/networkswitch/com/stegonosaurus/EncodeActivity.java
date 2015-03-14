@@ -130,7 +130,17 @@ public class EncodeActivity extends ActionBarActivity {
         if (id == R.id.action_settings) {
             return true;
         }
+        else if(id == R.id.action_cancel)
+        {
+            returnToMenu();
+        }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void returnToMenu()
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        this.startActivity(intent);
     }
 }
