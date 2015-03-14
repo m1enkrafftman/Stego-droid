@@ -15,7 +15,7 @@ public class StegonosaurusApplication  extends Application
         super.onCreate();
         // Required - Initialize the Parse SDK
         Parse.enableLocalDatastore(this);
-        Parse.initialize(this, "nDboBEDCxckDkgvND1nZJyWXLSNm4E8UhHZ3KcwY", "t3vDHxxS8HUh6XqEjebs7Zv5mlRgjSAbCHIMiNI2");
+        Parse.initialize(this, "d7jUJNqR3GutraiiZBBzuwji40eBZXfem5Ot01n6", "9HEqeJEPhU8yLaSL6xTp7rYEvQgDutxxzJAxEhGt");
 
         Parse.setLogLevel(Parse.LOG_LEVEL_DEBUG);
 

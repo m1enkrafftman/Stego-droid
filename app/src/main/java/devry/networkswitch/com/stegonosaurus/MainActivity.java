@@ -2,8 +2,11 @@ package devry.networkswitch.com.stegonosaurus;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.parse.ParseUser;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -30,10 +33,24 @@ public class MainActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_settings)
+        {
+            return true;
+        }
+        else if (id == R.id.action_logout)
+        {
+
+            logout();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void logout()
+    {
+        Log.i("Stego", "Logging out.. ");
+        ParseUser.logOut();
+        System.err.println("Sebastian sucks butt.");
     }
 }
