@@ -51,4 +51,4 @@
         android:layout_marginBottom="@dimen/com_parse_ui_small_vertical_spacing"
         android:text="Reset password" />
 </LinearLayout>
-<!-- From: file:/C:/Users/Sebastian%20Florez/Repos/Android/Stegonosaurus/ParseLoginUI/res/layout/com_parse_ui_parse_login_form.xml --><!-- From: file:/C:/Users/Sebastian%20Florez/Repos/Android/Stegonosaurus/ParseLoginUI/build/intermediates/bundles/debug/res/layout/com_parse_ui_parse_login_form.xml -->
+<!-- From: file:/home/m1/Documents/SwampHacks2015/Stego/stegonosaurus-android/ParseLoginUI/res/layout/com_parse_ui_parse_login_form.xml --><!-- From: file:/home/m1/Documents/SwampHacks2015/Stego/stegonosaurus-android/ParseLoginUI/build/intermediates/bundles/debug/res/layout/com_parse_ui_parse_login_form.xml -->

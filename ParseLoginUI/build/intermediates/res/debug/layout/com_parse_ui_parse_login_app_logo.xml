@@ -5,4 +5,4 @@
     android:layout_height="wrap_content"
     android:src="@drawable/stegologo"
     android:contentDescription="@string/com_parse_ui_logo_content_description" />
-<!-- From: file:/C:/Users/Sebastian%20Florez/Repos/Android/Stegonosaurus/ParseLoginUI/res/layout/com_parse_ui_parse_login_app_logo.xml -->
+<!-- From: file:/home/m1/Documents/SwampHacks2015/Stego/stegonosaurus-android/ParseLoginUI/res/layout/com_parse_ui_parse_login_app_logo.xml -->
