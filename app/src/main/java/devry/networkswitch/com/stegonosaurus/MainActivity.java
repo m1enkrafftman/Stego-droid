@@ -1,5 +1,6 @@
 package devry.networkswitch.com.stegonosaurus;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -84,6 +85,8 @@ public class MainActivity extends ActionBarActivity {
     {
         Log.i("Stego", "Logging out.. ");
         ParseUser.logOut();
+        Intent intent = new Intent(this, DispatchActivity.class);
+        this.startActivity(intent);
     }
 
     private void InitilizeGridLayout() {
