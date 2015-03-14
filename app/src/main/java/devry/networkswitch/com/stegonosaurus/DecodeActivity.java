@@ -1,18 +1,65 @@
 package devry.networkswitch.com.stegonosaurus;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+import java.util.Date;
+
+import devry.networkswitch.com.stegonosaurus.imageutils.Model;
+
+import static adapters.GridViewImageAdapter.decodeFile;
 
 
 public class DecodeActivity extends ActionBarActivity {
+
+    private Bitmap image;
+    private String imagePath;
+    private int imageWidth;
+
+    private Button decodeButton;
+
+    private ImageView decodeThumbnail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_decode);
+
+        decodeThumbnail = (ImageView) findViewById(R.id.imageView_thumbnaildecode);
+        decodeButton = (Button) findViewById(R.id.button_decode);
+
+        imagePath = getIntent().getStringExtra("imagePath");
+        imageWidth = getIntent().getIntExtra("imageWidth" , 50);
+
+        image = decodeFile( imagePath, imageWidth*2 , imageWidth*2
+        );
+
+        decodeThumbnail.setImageBitmap(image);
+
+        decodeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Date now = new Date();
+                String outS = "/Download/stegoout"+now.toString();
+                Model.pullDataFromImage(imagePath, String.valueOf(Environment.getExternalStorageDirectory()) + outS );
+                Toast.makeText(getShit(), "File saved to: " + outS, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public Activity getShit()
+    {
+        return this;
     }
 
 

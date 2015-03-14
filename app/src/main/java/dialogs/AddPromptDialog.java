@@ -114,6 +114,10 @@ public class AddPromptDialog extends DialogFragment {
     private void openDecode()
     {
         Intent intent = new Intent(this.getActivity(), DecodeActivity.class);
+        Bundle args = new Bundle();
+        args.putString("imagePath", _imagePath);
+        args.putInt("imageWidth", _imageWidth);
+        intent.putExtras(args);
         this.startActivity(intent);
     }
 
