@@ -6,4 +6,5 @@
     <string name="title_activity_encode">EncodeActivity</string>
     <string name="title_activity_decode">DecodeActivity</string>
     <string name="title_activity_generate">GenerateActivity</string>
+    <string name="title_activity_download">DownloadActivity</string>
 </resources>

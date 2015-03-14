@@ -95,7 +95,8 @@ public class MainActivity extends ActionBarActivity {
 
     private void showAddDialogPrompt()
     {
-
+        Intent intent = new Intent(this, DownloadActivity.class);
+        this.startActivity(intent);
     }
 
     private void InitilizeGridLayout() {

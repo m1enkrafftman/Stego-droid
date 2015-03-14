@@ -64,6 +64,10 @@
             android:name=".GenerateActivity"
             android:label="@string/title_activity_generate" >
         </activity>
+        <activity
+            android:name=".DownloadActivity"
+            android:label="@string/title_activity_download" >
+        </activity>
     </application>
 
 </manifest>

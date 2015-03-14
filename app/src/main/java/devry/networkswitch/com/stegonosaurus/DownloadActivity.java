@@ -7,20 +7,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class DecodeActivity extends ActionBarActivity {
+public class DownloadActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_decode);
+        setContentView(R.layout.activity_download);
     }
 
+    private void returnToMenu()
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        this.startActivity(intent);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_decode, menu);
-
+        getMenuInflater().inflate(R.menu.menu_download, menu);
         return true;
     }
 
@@ -41,11 +45,5 @@ public class DecodeActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    private void returnToMenu()
-    {
-        Intent intent = new Intent(this, MainActivity.class);
-        this.startActivity(intent);
     }
 }
